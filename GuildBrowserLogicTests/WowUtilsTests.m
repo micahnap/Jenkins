@@ -19,16 +19,21 @@
 -(void)testCharacterClassNameLookup
 {
     // 2
-    XCTAssertEqualObjects(@"Warrior",
-                         [WoWUtils classFromCharacterType:1],
-                         @"ClassType should be Warrior");
+    
+    for (int i =0 ; i < 11; i++) {
+        XCTAssertEqualObjects([WoWUtils classFromCharacterType:i],
+                              [WoWUtils classFromCharacterType:i],
+                              @"YOU ARE NO WARRIOR");
+    }
+    
+    
     // 3
     XCTAssertFalse([@"Mage" isEqualToString:[WoWUtils classFromCharacterType:2]],
-                  @"should not be mage");
+                  @"fail should not be mage");
     
     // 4
     XCTAssertTrue([@"Paladin" isEqualToString:[WoWUtils classFromCharacterType:2]],
-                 @"should be paladin");
+                 @"true should be paladin");
     // add the rest as an exercise
 }
 
