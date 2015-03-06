@@ -23,7 +23,7 @@
     for (int i =0 ; i < 11; i++) {
         XCTAssertEqualObjects([WoWUtils classFromCharacterType:i],
                               [WoWUtils classFromCharacterType:i],
-                              @"YOU ARE NO WARRIOR");
+                              @"YOU ARE NO SON OF MINE WARRIOR");
     }
     
     
