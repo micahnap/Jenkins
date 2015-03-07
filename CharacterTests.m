@@ -18,6 +18,7 @@
 @implementation CharacterTests
 {
     // 1
+    Character *_testGuy;
     NSDictionary *_characterDetailJson;
 }
 
@@ -61,6 +62,7 @@
 
 -(void)testCreateCharacterFromDetailJsonProps
 {
+    _testGuy = [[Character alloc] initWithCharacterDetailData:_characterDetailJson];
     XCTAssertEqualObjects(_testGuy.thumbnail, @"borean-tundra/171/40508075-avatar.jpg", @"thumbnail url is wrong");
     XCTAssertEqualObjects(_testGuy.name, @"Hagrel", @"name is wrong");
     XCTAssertEqualObjects(_testGuy.battleGroup, @"Emberstorm", @"battlegroup is wrong");
