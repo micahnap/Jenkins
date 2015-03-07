@@ -41,6 +41,8 @@
     
     
     _characterDetailJson = json;
+    
+    _testGuy = [[Character alloc] initWithCharacterDetailData:_characterDetailJson];
 }
 
 -(void)tearDown
@@ -62,7 +64,7 @@
 
 -(void)testCreateCharacterFromDetailJsonProps
 {
-    _testGuy = [[Character alloc] initWithCharacterDetailData:_characterDetailJson];
+    
     XCTAssertEqualObjects(_testGuy.thumbnail, @"borean-tundra/171/40508075-avatar.jpg", @"thumbnail url is wrong");
     XCTAssertEqualObjects(_testGuy.name, @"Hagrel", @"name is wrong");
     XCTAssertEqualObjects(_testGuy.battleGroup, @"Emberstorm", @"battlegroup is wrong");
